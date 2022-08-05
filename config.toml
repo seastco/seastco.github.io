@@ -1,4 +1,4 @@
-baseURL = 'seastcott.github.io'
+baseURL = 'https://seastcott.github.io/'
 languageCode = 'en-us'
 title = 'steve.codes'
 theme = "cactus"
