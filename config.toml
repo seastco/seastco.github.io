@@ -13,15 +13,15 @@ name = "Posts"
 url = "/posts"
 weight = 2
 
-#[[menu.main]]
-#name = "Tags"
-#url = "/tags"
-#weight = 3
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
 
-#[[menu.main]]
-#name = "About"
-#url = "/about"
-#weight = 4
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
 
 [markup]
   [markup.tableOfContents]
@@ -43,20 +43,28 @@ weight = 2
   colortheme = "white" # dark, light, white, or classic
   rss = true # generate rss feed. default value is false
   googleAnalyticsAsync = true # use asynchronous tracking. Synchronous tracking by default
-  showAllPostsArchive = true # default
+  showAllPostsArchive = false # default
 
   # Home page settings
   description = "Software Engineer. Always learning."
   mainSection = "posts" # your main section
   mainSectionTitle = "Posts"
   showAllPostsOnHomePage = false # default
-  postsOnHomePage = 10 # this option will be ignored if showAllPostsOnHomePage is set to true
+  postsOnHomePage = 8 # this option will be ignored if showAllPostsOnHomePage is set to true
   tagsOverview = true # show tags overview by default.
   showProjectsList = true # show projects list by default (if projects data file exists).
-  projectsUrl = "https://github.com/seastco" # title link for projects list
+  projectsUrl = "https://github.com/seastcott" # title link for projects list
 
   # https://gohugo.io/functions/format/#hugo-date-and-time-templating-reference
   dateFormat = "2006-01-02" # default
 
   [params.comments]
     enabled = false
+
+  [[params.social]]
+    name = "github"
+    link = "https://github.com/seastcott"
+
+  [[params.social]]
+    name = "email"
+    link = "hello@steve.codes"
