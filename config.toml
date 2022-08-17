@@ -60,11 +60,3 @@ weight = 4
 
   [params.comments]
     enabled = false
-
-  [[params.social]]
-    name = "github"
-    link = "https://github.com/seastcott"
-
-  [[params.social]]
-    name = "email"
-    link = "hello@steve.codes"
