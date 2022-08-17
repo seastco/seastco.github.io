@@ -16,7 +16,7 @@ Hugo is framework for static site generation, meaning the entirety of my blog wi
 ## GitHub Pages
 I had a hiccup with linking my custom domain _steve_._codes_ to GitHub Pages _seastcott.github_._io_. In my domain’s DNS settings, I added a CNAME record with host _www.steve_._codes_ and value _seastcott.github_._io_. This did not work as expected. I fundamentally misunderstood the meaning of host and how it is different than domain.
 
-Host and domain are usually used together in the form _host.domain_._com_, i.e. _steve_._codes_ is the domain and _www_ is the host. _www.steve_._codes_ is technically a valid host, but that would leave us with _www.steve_._codes_._steve_._codes_. With _www.steve_._codes_ set as the CNAME record host, I spent hours wondering why navigating to _www.steve_._codes_ was failing with a DNS error. I threw in the towel thinking it was caching issue that would eventually resolve on its own (nope). I ran this problem by a friend the next day and fortunately he was able to set me straight.
+Host and domain are usually used together in the form _host.domain_._com_, i.e. _steve_._codes_ is the domain and _www_ is the host. _www.steve_._codes_ is technically a valid host, but that would leave us with _www.steve_._codes_._steve_._codes_. With _www.steve_._codes_ set as the CNAME record host, I spent hours wondering why navigating to _www.steve_._codes_ was failing with a DNS error. I threw in the towel thinking it was a caching issue that would eventually resolve on its own (nope). I ran this problem by a friend the next day and fortunately he was able to set me straight.
 
 **Incorrect** (_www.steve_._codes_._steve_._codes_):
 ![Incorrect](images/incorrect.png)
