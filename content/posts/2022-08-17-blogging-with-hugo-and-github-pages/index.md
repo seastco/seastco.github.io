@@ -6,7 +6,7 @@ keywords:
   - GitHub Pages
 ---
 ## Decisions, Decisions
-When I went to create this blog, I quickly hit decision paralysis. Should I use a CMS? Which one? Strapi? Ghost? Sanity? What about a statically generated site? Hugo, Jekyll, Gatsby? What about Next.js? What about classic and reliable WordPress? Where should I host?
+When I went to create this blog, I quickly hit decision paralysis. Should I use a CMS? Which one? Strapi? Ghost? Sanity? Should I write the frontend in Next.js, or keep it simple with a static site generator like Hugo or Jekyll? Is WordPress still a thing? Where should I host?
 
 After hours of research, I finally decided on Next.js and Strapi. Over-engineered for the purpose of this blog, but I thought learning this stack would be interesting. That is… until I looked at hosting cost. Hosting through Digital Ocean with the Strapi-recommended CPU and memory was going to be $50/mo, so I scrapped everything and went with basic Hugo and GitHub Pages. Hugo because I found a theme that I liked, GitHub Pages because it’s free.
 
@@ -24,4 +24,4 @@ Host and domain are usually used together in the form _host.domain_._com_, i.e. 
 **Correct** (_www_._steve_._codes_):
 ![Correct](images/correct.png)
 
-And we’re live! Though, I started wondering, how scalable is GitHub Pages? It is free after all. Sure enough, I found a site size limit of 1 GB and a bandwidth limit of 100 GB per month. I’ll  definitely never exceed these, but it’s worth exploring what my next-best option would be. Would I need to pay for a dedicated cloud instance? I’ll explore this more in my next post.
+And we’re live! Though, I started wondering, how scalable is GitHub Pages? It is free after all. Sure enough, I found a site size limit of 1 GB and a bandwidth limit of 100 GB per month. I’ll  definitely never exceed these, but it’s worth exploring what my next-best option would be. I’ll look at this more in my next post.
