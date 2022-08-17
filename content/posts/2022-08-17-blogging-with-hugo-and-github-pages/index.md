@@ -24,4 +24,4 @@ Host and domain are usually used together in the form _host.domain_._com_, i.e. 
 **Correct** (_www_._steve_._codes_):
 ![Correct](images/correct.png)
 
-And we’re live! I started wondering, though, how scalable is GitHub Pages? It is free after all. Sure enough, I found a site size limit of 1 GB and a bandwidth limit of 100 GB per month. I’ll definitely never exceed these, but it’s worth exploring what my next-best option would be. I’ll look at this more in my next post.
+And we’re live! I started wondering, though, how scalable is GitHub Pages? It is free after all. Sure enough, I [found](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#limits-on-use-of-github-pages) a site size limit of 1 GB and a bandwidth limit of 100 GB per month. I’ll definitely never exceed these, but it’s worth exploring what my next-best option would be. I’ll look at this more in my next post.
