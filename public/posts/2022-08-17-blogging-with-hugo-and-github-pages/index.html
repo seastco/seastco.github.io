@@ -16,7 +16,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta property="og:title" content="Blogging with Hugo and GitHub Pages" />
-<meta property="og:description" content="Decisions, Decisions When I went to create this blog, I quickly hit decision paralysis. Should I use a CMS? Which one? Strapi? Ghost? Sanity? What about a statically generated site? Hugo, Jekyll, Gatsby? What about Next.js? What about classic and reliable WordPress? Where should I host?
+<meta property="og:description" content="Decisions, Decisions When I went to create this blog, I quickly hit decision paralysis. Should I use a CMS? Which one? Strapi? Ghost? Sanity? Should I write the frontend in Next.js, or keep it simple with a static site generator like Hugo or Jekyll? Is WordPress still a thing? Where should I host?
 After hours of research, I finally decided on Next.js and Strapi. Over-engineered for the purpose of this blog, but I thought learning this stack would be interesting." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://www.steve.codes/posts/2022-08-17-blogging-with-hugo-and-github-pages/" /><meta property="article:section" content="posts" />
@@ -26,7 +26,7 @@ After hours of research, I finally decided on Next.js and Strapi. Over-engineere
 
   <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Blogging with Hugo and GitHub Pages"/>
-<meta name="twitter:description" content="Decisions, Decisions When I went to create this blog, I quickly hit decision paralysis. Should I use a CMS? Which one? Strapi? Ghost? Sanity? What about a statically generated site? Hugo, Jekyll, Gatsby? What about Next.js? What about classic and reliable WordPress? Where should I host?
+<meta name="twitter:description" content="Decisions, Decisions When I went to create this blog, I quickly hit decision paralysis. Should I use a CMS? Which one? Strapi? Ghost? Sanity? Should I write the frontend in Next.js, or keep it simple with a static site generator like Hugo or Jekyll? Is WordPress still a thing? Where should I host?
 After hours of research, I finally decided on Next.js and Strapi. Over-engineered for the purpose of this blog, but I thought learning this stack would be interesting."/>
 
   
@@ -140,7 +140,7 @@ After hours of research, I finally decided on Next.js and Strapi. Over-engineere
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.steve.codes%2fposts%2f2022-08-17-blogging-with-hugo-and-github-pages%2f&name=Blogging%20with%20Hugo%20and%20GitHub%20Pages&description=Decisions%2c%20Decisions%20When%20I%20went%20to%20create%20this%20blog%2c%20I%20quickly%20hit%20decision%20paralysis.%20Should%20I%20use%20a%20CMS%3f%20Which%20one%3f%20Strapi%3f%20Ghost%3f%20Sanity%3f%20What%20about%20a%20statically%20generated%20site%3f%20Hugo%2c%20Jekyll%2c%20Gatsby%3f%20What%20about%20Next.js%3f%20What%20about%20classic%20and%20reliable%20WordPress%3f%20Where%20should%20I%20host%3f%0aAfter%20hours%20of%20research%2c%20I%20finally%20decided%20on%20Next.js%20and%20Strapi.%20Over-engineered%20for%20the%20purpose%20of%20this%20blog%2c%20but%20I%20thought%20learning%20this%20stack%20would%20be%20interesting." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.steve.codes%2fposts%2f2022-08-17-blogging-with-hugo-and-github-pages%2f&name=Blogging%20with%20Hugo%20and%20GitHub%20Pages&description=Decisions%2c%20Decisions%20When%20I%20went%20to%20create%20this%20blog%2c%20I%20quickly%20hit%20decision%20paralysis.%20Should%20I%20use%20a%20CMS%3f%20Which%20one%3f%20Strapi%3f%20Ghost%3f%20Sanity%3f%20Should%20I%20write%20the%20frontend%20in%20Next.js%2c%20or%20keep%20it%20simple%20with%20a%20static%20site%20generator%20like%20Hugo%20or%20Jekyll%3f%20Is%20WordPress%20still%20a%20thing%3f%20Where%20should%20I%20host%3f%0aAfter%20hours%20of%20research%2c%20I%20finally%20decided%20on%20Next.js%20and%20Strapi.%20Over-engineered%20for%20the%20purpose%20of%20this%20blog%2c%20but%20I%20thought%20learning%20this%20stack%20would%20be%20interesting." aria-label="Tumblr">
       <i class="fab fa-tumblr " aria-hidden="true"></i>
     </a>
   </li>
@@ -190,14 +190,18 @@ After hours of research, I finally decided on Next.js and Strapi. Over-engineere
     
     <div class="content" itemprop="articleBody">
       <h2 id="decisions-decisions">Decisions, Decisions</h2>
-<p>When I went to create this blog, I quickly hit decision paralysis. Should I use a CMS? Which one? Strapi? Ghost? Sanity? What about a statically generated site? Hugo, Jekyll, Gatsby? What about Next.js? What about classic and reliable WordPress? Where should I host?</p>
+<p>When I went to create this blog, I quickly hit decision paralysis. Should I use a CMS? Which one? Strapi? Ghost? Sanity? Should I write the frontend in Next.js, or keep it simple with a static site generator like Hugo or Jekyll? Is WordPress still a thing? Where should I host?</p>
 <p>After hours of research, I finally decided on Next.js and Strapi. Over-engineered for the purpose of this blog, but I thought learning this stack would be interesting. That is… until I looked at hosting cost. Hosting through Digital Ocean with the Strapi-recommended CPU and memory was going to be $50/mo, so I scrapped everything and went with basic Hugo and GitHub Pages. Hugo because I found a theme that I liked, GitHub Pages because it’s free.</p>
 <h2 id="hugo">Hugo</h2>
 <p>Hugo is framework for static site generation, meaning the entirety of my blog will be written in markdown and checked into <a href="https://github.com/seastcott/seastcott.github.io">GitHub</a>. I found the <a href="https://www.takuzen.me/hugo-theme-cactus/">Cactus theme</a> which is exactly what I was looking for. Simple, minimal. No bells, no whistles. My only gripe was the literal cactus logo and the light green color, so I changed those.</p>
 <h2 id="github-pages">GitHub Pages</h2>
-<p>I had a hiccup with linking my custom domain <em>steve</em>.<em>codes</em> to GitHub Pages <em>seastcott.github</em>.<em>io</em>. In my domain’s DNS settings, I added a CNAME record with host <em>www.steve</em>.<em>codes</em> and value <em>seastcott.github</em>.<em>io</em>. This did not work as expected. I fundamentally misunderstood the meaning of host and how it was different than domain.</p>
-<p>Host and domain are usually used together in the form <em>host.domain</em>.<em>com</em>, i.e. <em>steve</em>.<em>codes</em> is the domain and <em>www</em> is the host. <em>www.steve</em>.<em>codes</em> is technically a valid host, but that would leave us with <em>www.steve</em>.<em>codes</em>.<em>steve</em>.<em>codes</em>. With <em>www.steve</em>.<em>codes</em> set as the CNAME record host, I spent hours wondering why navigating to <em>www.steve</em>.<em>codes</em> was failing with a DNS error. I threw in the towel thinking it was caching issue that would eventually resolve on its own (nope). I ran this problem by a friend the next day and fortunately he set me straight.</p>
-<p>And we’re live! Though, I started wondering, how scalable is GitHub Pages? It is free after all. Sure enough, I found a site size limit of 1 GB and a bandwidth limit of 100 GB per month. I’ll  definitely never exceed these, but it’s worth exploring what my next-best option would be. Would I need to pay for a dedicated cloud instance? I’ll explore this more in my next post.</p>
+<p>I had a hiccup with linking my custom domain <em>steve</em>.<em>codes</em> to GitHub Pages <em>seastcott.github</em>.<em>io</em>. In my domain’s DNS settings, I added a CNAME record with host <em>www.steve</em>.<em>codes</em> and value <em>seastcott.github</em>.<em>io</em>. This did not work as expected. I fundamentally misunderstood the meaning of host and how it is different than domain.</p>
+<p>What I learned: host and domain are usually used together in the form <em>host.domain</em>.<em>com</em>, i.e. <em>steve</em>.<em>codes</em> is the domain and <em>www</em> is the host. <em>www.steve</em>.<em>codes</em> is technically a valid host, but that would leave us with <em>www.steve</em>.<em>codes</em>.<em>steve</em>.<em>codes</em>. With <em>www.steve</em>.<em>codes</em> set as the CNAME record host, I spent hours wondering why navigating to <em>www.steve</em>.<em>codes</em> was failing with a DNS error. I threw in the towel thinking it was a caching issue that would eventually resolve on its own (nope). I ran this problem by a friend the next day and fortunately he was able to set me straight.</p>
+<p><strong>Incorrect</strong> (<em>www.steve</em>.<em>codes</em>.<em>steve</em>.<em>codes</em>):
+<img src="images/incorrect.png" alt="Incorrect"></p>
+<p><strong>Correct</strong> (<em>www</em>.<em>steve</em>.<em>codes</em>):
+<img src="images/correct.png" alt="Correct"></p>
+<p>And we’re live! I started wondering, though, how scalable is GitHub Pages? It is free after all. Sure enough, there&rsquo;s a bandwidth <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#usage-limits">limit</a> of 100 GB per month and a site size limit of 1 GB. I’ll definitely never exceed these, but it’s worth exploring what my next-best option would be. I’ll look at this more in my next post.</p>
 
     </div>
   </article>
@@ -283,7 +287,7 @@ After hours of research, I finally decided on Next.js and Strapi. Over-engineere
     </a>
   </li>
   <li>
-    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.steve.codes%2fposts%2f2022-08-17-blogging-with-hugo-and-github-pages%2f&name=Blogging%20with%20Hugo%20and%20GitHub%20Pages&description=Decisions%2c%20Decisions%20When%20I%20went%20to%20create%20this%20blog%2c%20I%20quickly%20hit%20decision%20paralysis.%20Should%20I%20use%20a%20CMS%3f%20Which%20one%3f%20Strapi%3f%20Ghost%3f%20Sanity%3f%20What%20about%20a%20statically%20generated%20site%3f%20Hugo%2c%20Jekyll%2c%20Gatsby%3f%20What%20about%20Next.js%3f%20What%20about%20classic%20and%20reliable%20WordPress%3f%20Where%20should%20I%20host%3f%0aAfter%20hours%20of%20research%2c%20I%20finally%20decided%20on%20Next.js%20and%20Strapi.%20Over-engineered%20for%20the%20purpose%20of%20this%20blog%2c%20but%20I%20thought%20learning%20this%20stack%20would%20be%20interesting." aria-label="Tumblr">
+    <a class="icon" href="http://www.tumblr.com/share/link?url=https%3a%2f%2fwww.steve.codes%2fposts%2f2022-08-17-blogging-with-hugo-and-github-pages%2f&name=Blogging%20with%20Hugo%20and%20GitHub%20Pages&description=Decisions%2c%20Decisions%20When%20I%20went%20to%20create%20this%20blog%2c%20I%20quickly%20hit%20decision%20paralysis.%20Should%20I%20use%20a%20CMS%3f%20Which%20one%3f%20Strapi%3f%20Ghost%3f%20Sanity%3f%20Should%20I%20write%20the%20frontend%20in%20Next.js%2c%20or%20keep%20it%20simple%20with%20a%20static%20site%20generator%20like%20Hugo%20or%20Jekyll%3f%20Is%20WordPress%20still%20a%20thing%3f%20Where%20should%20I%20host%3f%0aAfter%20hours%20of%20research%2c%20I%20finally%20decided%20on%20Next.js%20and%20Strapi.%20Over-engineered%20for%20the%20purpose%20of%20this%20blog%2c%20but%20I%20thought%20learning%20this%20stack%20would%20be%20interesting." aria-label="Tumblr">
       <i class="fab fa-tumblr fa-lg" aria-hidden="true"></i>
     </a>
   </li>

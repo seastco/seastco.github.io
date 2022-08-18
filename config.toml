@@ -24,6 +24,9 @@ url = "/about"
 weight = 4
 
 [markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
   [markup.tableOfContents]
     endLevel = 4
     ordered = false
