@@ -16,4 +16,4 @@ Overall, I’m loving Go. I’m still a noob so I don’t have a novel take to s
 
 Now that I'm done with codecademy, back to the Redis prototype I go (pun intended).
 
- ![Certificate](images/learning-go-certificate.png)
+![Certificate](images/learning-go-certificate.png)
