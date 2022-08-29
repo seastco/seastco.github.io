@@ -13,8 +13,7 @@
       <pubDate>Sun, 28 Aug 2022 22:18:00 +0000</pubDate>
       
       <guid>https://www.steve.codes/posts/2022-08-28-learning-go/</guid>
-      <description>This post was supposed to be about building a barebones Redis prototype in Go. I’ve never written Go before, so I’m not sure why I thought diving head first into building a Redis prototype would be a good idea. The constant pausing to look up syntax was getting annoying, so I decided to hit pause and approach learning Go a bit more methodically.
-I’m most proficient in Java. It was widely used at my university, and it’s the only language I’ve ever written professionally.</description>
+      <description>This post was supposed to be about building a barebones Redis prototype in Go. I’ve never written Go before, so I’m not sure why I thought diving head first into a complex project like this would be a good idea. I was making gradual progress, but the constant pausing to look up syntax was getting tiring. I decided to put the project on hold and take the time to learn Go a bit more methodically.</description>
     </item>
     
     <item>
