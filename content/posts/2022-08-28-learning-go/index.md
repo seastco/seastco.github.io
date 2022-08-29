@@ -14,6 +14,6 @@ I began going through [A Tour of Go](https://go.dev/tour/list), but it felt too 
 
 Overall, I’m loving Go. I’m still a noob so I don’t have a novel take to share, but I just love all the little things they get right. Goroutines, defer, failing to compile for unused imports and variables, support for multiple return types, type inference. All great features. Side note: is there a mainstream language that is not enjoyable to learn? TypeScript, Elixir, Rust, Kotlin, Julia, Swift, etc. are all so refined these days. I’m sure they’re all great; I’ve never been one to partake in language wars.
 
-With codecademy checked off, back to the Redis prototype I go (pun intended).
+Now that I'm done with codecademy, back to the Redis prototype I go (pun intended).
 
  ![Certificate](images/learning-go-certificate.png)
