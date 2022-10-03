@@ -6,7 +6,16 @@
     <description>Recent content on steve.codes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 28 Aug 2022 22:18:00 +0000</lastBuildDate><atom:link href="https://www.steve.codes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 22:44:00 +0000</lastBuildDate><atom:link href="https://www.steve.codes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building Redis</title>
+      <link>https://www.steve.codes/posts/2022-10-02-building-redis/</link>
+      <pubDate>Sun, 02 Oct 2022 22:44:00 +0000</pubDate>
+      
+      <guid>https://www.steve.codes/posts/2022-10-02-building-redis/</guid>
+      <description>I have a great deal of respect for anyone who’s built something novel. Whether it’s a programming language, database, or web framework, it’s such an amazing feat. I’m five years into my career and I personally wouldn’t know where to start with any of these. I wish there was a clear roadmap that outlined &amp;ldquo;do this and you’ll be good enough to build something like Redis.&amp;rdquo; I think the roadmap is to just keep coding?</description>
+    </item>
+    
     <item>
       <title>Learning Go</title>
       <link>https://www.steve.codes/posts/2022-08-28-learning-go/</link>
