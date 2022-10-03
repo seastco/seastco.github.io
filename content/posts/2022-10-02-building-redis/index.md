@@ -62,7 +62,7 @@ figure out how to condense this into this blog post, but it’s a loooong spec. 
 While this was an enjoyable exercise, I don’t think CodeCrafters is ready for primetime. I’d love to see more depth; 
 I didn’t learn much about Redis other than the esoteric RESP protocol. The source code walkthroughs were valuable, but 
 those were only provided for 2 of the 6 stages. I’ll revisit this in a year when the content has hopefully matured. The 
-roadmap must be good if they’re backed by Y Combinator. This kind of educational content is lacking and is absolutely 
+future roadmap must be good if they’re backed by Y Combinator. This kind of educational content is lacking and is absolutely 
 needed, so I’m rooting for their success.
 
 A final note - it’s interesting to see the Redis source code have [files](https://github.com/redis/redis/blob/7.0/src/server.c) 
