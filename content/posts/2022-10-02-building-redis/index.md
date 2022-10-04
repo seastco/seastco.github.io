@@ -25,11 +25,11 @@ First, start a TCP server on port 6379, the default port that Redis uses. This d
 is an unused variable (+1 for cool Go features).
 ```
 func main() {
-	listener, err := net.Listen("tcp", "0.0.0.0:6379")
-	if err != nil {
-		fmt.Println("Failed to bind to port 6379")
-		os.Exit(1)
-	}
+    listener, err := net.Listen("tcp", "0.0.0.0:6379")
+    if err != nil {
+        fmt.Println("Failed to bind to port 6379")
+        os.Exit(1)
+    }
 }
 ```
 
@@ -42,20 +42,20 @@ Redis clients & servers speak using RESP (REdis Serialization Protocol), so we n
 response is "+" and different parts of the protocol are always terminated using "\r\n" (CLRF).
 ```
 func main() {
-	listener, err := net.Listen("tcp", "0.0.0.0:6379")
-	if err != nil {
-		fmt.Println("Failed to bind to port 6379")
-		os.Exit(1)
-	}
-	
-	conn, err := listener.Accept()
-	if err != nil {
-		fmt.Println("Error accepting connection: ", err.Error())
-		os.Exit(1)
-	}
-	
-	defer conn.Close()
-	conn.Write([]byte("+PONG\r\n"))
+    listener, err := net.Listen("tcp", "0.0.0.0:6379")
+    if err != nil {
+        fmt.Println("Failed to bind to port 6379")
+        os.Exit(1)
+    }
+    
+    conn, err := listener.Accept()
+    if err != nil {
+        fmt.Println("Error accepting connection: ", err.Error())
+        os.Exit(1)
+    }
+    
+    defer conn.Close()
+    conn.Write([]byte("+PONG\r\n"))
 }
 ```
 
@@ -80,21 +80,21 @@ To handle multiple concurrent clients, we wrap listener.Accept() in a for loop a
 *goroutine*. A *goroutine* is a lightweight thread of execution that executes concurrently with the calling one.
 ```
 func main() {
-	listener, err := net.Listen("tcp", "0.0.0.0:6379")
-	if err != nil {
-		fmt.Println("Failed to bind to port 6379")
-		os.Exit(1)
-	}
-	
-	for {
-	    conn, err := listener.Accept()
-	    if err != nil {
-		    fmt.Println("Error accepting connection: ", err.Error())
-		    os.Exit(1)
-		}
-		
-		go handleConnection(conn)
-	}
+    listener, err := net.Listen("tcp", "0.0.0.0:6379")
+    if err != nil {
+        fmt.Println("Failed to bind to port 6379")
+        os.Exit(1)
+    }
+    
+    for {
+        conn, err := listener.Accept()
+        if err != nil {
+            fmt.Println("Error accepting connection: ", err.Error())
+            os.Exit(1)
+        }
+        
+        go handleConnection(conn)
+    }
 }
 
 func handleConnection(conn net.Conn) {
