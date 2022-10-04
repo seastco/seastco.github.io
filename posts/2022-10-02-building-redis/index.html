@@ -15,30 +15,30 @@ taking action and diving deep, learning from the world’s best.</em> Exactly wh
 dived immediately into the Redis tutorial.</p><p>Each stage in the tutorial has an explanation, solution, and sometimes an official source code walkthrough. I’ve
 provided a summary of each stage below, annotated with some of my thoughts.</p><h2 id=1-bind-to-a-port>1. Bind to a port</h2><p>First, start a TCP server on port 6379, the default port that Redis uses. This does not compile (yet) because listener
 is an unused variable (+1 for cool Go features).</p><pre tabindex=0><code>func main() {
-	listener, err := net.Listen(&#34;tcp&#34;, &#34;0.0.0.0:6379&#34;)
-	if err != nil {
-		fmt.Println(&#34;Failed to bind to port 6379&#34;)
-		os.Exit(1)
-	}
+    listener, err := net.Listen(&#34;tcp&#34;, &#34;0.0.0.0:6379&#34;)
+    if err != nil {
+        fmt.Println(&#34;Failed to bind to port 6379&#34;)
+        os.Exit(1)
+    }
 }
 </code></pre><h2 id=2-respond-to-ping>2. Respond to PING</h2><p>Next, respond to the <a href=https://redis.io/commands/ping/>PING</a> command. Per the tutorial, hardcode the response and assume
 the client is sending &ldquo;PING&rdquo;.</p><p>Redis clients & servers speak using RESP (REdis Serialization Protocol), so we need to encode the &ldquo;PONG&rdquo; response as a
 <a href=https://redis.io/docs/reference/protocol-spec/>RESP Simple String</a>. For RESP Simple Strings, the first byte of the
 response is &ldquo;+&rdquo; and different parts of the protocol are always terminated using &ldquo;\r\n&rdquo; (CLRF).</p><pre tabindex=0><code>func main() {
-	listener, err := net.Listen(&#34;tcp&#34;, &#34;0.0.0.0:6379&#34;)
-	if err != nil {
-		fmt.Println(&#34;Failed to bind to port 6379&#34;)
-		os.Exit(1)
-	}
-	
-	conn, err := listener.Accept()
-	if err != nil {
-		fmt.Println(&#34;Error accepting connection: &#34;, err.Error())
-		os.Exit(1)
-	}
-	
-	defer conn.Close()
-	conn.Write([]byte(&#34;+PONG\r\n&#34;))
+    listener, err := net.Listen(&#34;tcp&#34;, &#34;0.0.0.0:6379&#34;)
+    if err != nil {
+        fmt.Println(&#34;Failed to bind to port 6379&#34;)
+        os.Exit(1)
+    }
+    
+    conn, err := listener.Accept()
+    if err != nil {
+        fmt.Println(&#34;Error accepting connection: &#34;, err.Error())
+        os.Exit(1)
+    }
+    
+    defer conn.Close()
+    conn.Write([]byte(&#34;+PONG\r\n&#34;))
 }
 </code></pre><h2 id=3-respond-to-multiple-pings>3. Respond to multiple PINGs</h2><p>The solution suggested to simply add a for loop to handle multiple client requests. Technically true, but the
 conn.Read() below is non-blocking and will not wait on client input. So as long as the connection is open, server is
@@ -53,21 +53,21 @@ solution is misleading and they agreed to modify it in a future release.</p><pre
 }
 </code></pre><h2 id=4-handle-concurrent-clients>4. Handle concurrent clients</h2><p>To handle multiple concurrent clients, we wrap listener.Accept() in a for loop and handle each connection using a
 <em>goroutine</em>. A <em>goroutine</em> is a lightweight thread of execution that executes concurrently with the calling one.</p><pre tabindex=0><code>func main() {
-	listener, err := net.Listen(&#34;tcp&#34;, &#34;0.0.0.0:6379&#34;)
-	if err != nil {
-		fmt.Println(&#34;Failed to bind to port 6379&#34;)
-		os.Exit(1)
-	}
-	
-	for {
-	    conn, err := listener.Accept()
-	    if err != nil {
-		    fmt.Println(&#34;Error accepting connection: &#34;, err.Error())
-		    os.Exit(1)
-		}
-		
-		go handleConnection(conn)
-	}
+    listener, err := net.Listen(&#34;tcp&#34;, &#34;0.0.0.0:6379&#34;)
+    if err != nil {
+        fmt.Println(&#34;Failed to bind to port 6379&#34;)
+        os.Exit(1)
+    }
+    
+    for {
+        conn, err := listener.Accept()
+        if err != nil {
+            fmt.Println(&#34;Error accepting connection: &#34;, err.Error())
+            os.Exit(1)
+        }
+        
+        go handleConnection(conn)
+    }
 }
 
 func handleConnection(conn net.Conn) {
