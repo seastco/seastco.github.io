@@ -32,7 +32,7 @@ project, even if it&rsquo;s to break even, is generally prohibited at the compan
 back to a particular Discord user. The best way do this is to have some kind of OAuth login to request client information,
 and then tie that information with a credit purchase. I went barebones and decided to generate a voucher ID for every
 purchase, and then make the user responsible for redeeming that voucher by passing the ID into a Discord command.
-Admittedly not very user friendly, but reminder, this won&rsquo;t actually have any users.</p><p><img src=images/redeem.gif alt=Redeem></p><p>So to break this down: upon purchase, we store a row containing just the voucher ID and number of credits. Upon redemption,
+Admittedly not very user friendly, but remember this won&rsquo;t actually have any users.</p><p><img src=images/redeem.gif alt=Redeem></p><p>So to break this down: upon purchase, we store a row containing just the voucher ID and number of credits. Upon redemption,
 we update the row to include the user. Every time an image is created, we decrement the credits column by 1. All of this
 logic is part of a separate <em>voucher-service</em> running as a Flask application on the same EC2 instance as the bot.</p><p>Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. Now I didn&rsquo;t do
 extensive research, so I have no clue how this would handle decrementing hundreds or thousands of credits per second.
