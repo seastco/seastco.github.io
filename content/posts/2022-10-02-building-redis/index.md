@@ -10,11 +10,11 @@ keywords:
 I have a great deal of respect for anyone who’s built something novel. Whether it’s a programming language, database, or 
 web framework, it’s such an amazing feat. I’m five years into my career and I personally wouldn’t know where to start 
 with any of these. I wish there was a clear roadmap that outlined "do this and you’ll be good enough to build something 
-like Redis." I think the roadmap is to just keep coding? That’s until I stumbled across [CodeCrafters](https://codecrafters.io), 
-a Y Combinator-backed startup trying to teach engineers how to write complex software.
+like Redis." I think the roadmap is to just keep coding? This topic has been on my mind for some time, and coincidentally
+I stumbled across a startup that's finally trying to provide a solution: [CodeCrafters](https://codecrafters.io). 
 
 *Practice Writing Complex Software. Recreate Redis, Git, Docker - with your own hands. Gain expert-level confidence by 
-taking action and diving deep, learning from the world’s best.* Exactly what I’ve been looking for. I signed up and 
+taking action and diving deep, learning from the world’s best.* Exactly what I’ve been looking for! I signed up and 
 dived immediately into the Redis tutorial.
 
 Each stage in the tutorial has an explanation, solution, and sometimes an official source code walkthrough. I’ve 
@@ -116,8 +116,8 @@ Now that we’re dealing with multiple commands, we have to write a RESP parser 
 sending our server. In short, this required implementing the [RESP protocol spec](https://redis.io/docs/reference/protocol-spec/). 
 Once we’ve parsed out the command and respective args, the business logic is straightforward. A simple Map struct was 
 used for GET/SET, and ECHO is just responding with the same content provided in the request. I spent a while trying to 
-figure out how to condense this into this blog post, but it’s a loooong spec. The code is available on my 
-[GitHub](https://github.com/seastco/redis-go/tree/main/app).
+figure out how to condense this into this blog post, but it’s a loooong spec. So if you're really interested, the code 
+is available on my [GitHub](https://github.com/seastco/redis-go/tree/main/app).
 
 ## Closing Thoughts
 While this was an enjoyable exercise, I don’t think CodeCrafters is ready for primetime. I’d love to see more depth; 
@@ -128,7 +128,7 @@ needed, so I’m rooting for their success.
 
 A final note - it’s interesting to see the Redis source code have [files](https://github.com/redis/redis/blob/7.0/src/server.c) 
 with 7000+ LOC. If I blindly came across this code not knowing it was Redis, I’d have a smug, knee-jerk reaction about 
-how the code is trash. A humble reminder to myself to not be so opinionated about subjective rules. What the hell do I 
+how the code is poor. A humble reminder to myself to not be so opinionated about subjective rules. What the heck do I 
 know? Redis is one of the most loved and successful databases to date; clearly the maintainers know what they’re doing. 
 I’m not saying 7000+ LOC is the correct thing to do, but there are obviously bigger fish to fry.
 

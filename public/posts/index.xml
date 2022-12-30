@@ -6,7 +6,16 @@
     <description>Recent content in Posts on steve.codes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Oct 2022 22:44:00 +0000</lastBuildDate><atom:link href="https://www.steve.codes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Dec 2022 23:31:50 +0000</lastBuildDate><atom:link href="https://www.steve.codes/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DALL-E Discord Bot</title>
+      <link>https://www.steve.codes/posts/2022-12-29-dalle-discord-bot/</link>
+      <pubDate>Thu, 29 Dec 2022 23:31:50 +0000</pubDate>
+      
+      <guid>https://www.steve.codes/posts/2022-12-29-dalle-discord-bot/</guid>
+      <description>Like most techies, I&amp;rsquo;ve found myself fascinated with OpenAI&amp;rsquo;s DALL-E and ChatGPT. And like most techies, I&amp;rsquo;ve eagerly been telling my (uninterested) non-tech friends about the coming AI revolution. Sure, man. They couldn&amp;rsquo;t be bothered with creating an OpenAI account and providing their payment information, so I decided to bring the magic to them via a Discord bot. Specifically DALL-E, since there&amp;rsquo;s an API readily available to interact with it. The use case is simple: create a bot that responds to a /generate command with a DALL-E generated image.</description>
+    </item>
+    
     <item>
       <title>Building Redis</title>
       <link>https://www.steve.codes/posts/2022-10-02-building-redis/</link>
