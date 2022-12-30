@@ -34,8 +34,7 @@ and then tie that information with a credit purchase. I went barebones and decid
 purchase, and then make the user responsible for redeeming that voucher by passing the ID into a Discord command.
 Admittedly not very user friendly, but reminder, this won&rsquo;t actually have any users.</p><p><img src=images/redeem.gif alt=Redeem></p><p>So to break this down: upon purchase, we store a row containing just the voucher ID and number of credits. Upon redemption,
 we update the row to include the user. Every time an image is created, we decrement the credits column by 1. All of this
-logic is part of a separate <em>voucher-service</em> running as a Flask application on the same EC2 instance as the bot. Vouchers
-are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. Now I didn&rsquo;t do
+logic is part of a separate <em>voucher-service</em> running as a Flask application on the same EC2 instance as the bot.</p><p>Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. Now I didn&rsquo;t do
 extensive research, so I have no clue how this would handle decrementing hundreds or thousands of credits per second.
 Probably woudn&rsquo;t be my first choice for production. I initially wanted to go with an AWS-managed database like RDS, but it
 was too pricey for the scope of this project.</p><p>And that&rsquo;s that! This started off as a simple Python script running on my machine, and turned into me dabbling with ECS,
