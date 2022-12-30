@@ -203,7 +203,7 @@ interact with it. The use case is simple: create a bot that responds to a <em>/g
 DALL-E generated image.</p>
 <h2 id="discordpy">Discord.py</h2>
 <p>It&rsquo;s been a minute since I&rsquo;ve done anything in Python (3.11 is already a thing?!), so I decided to roll with that.
-Fortunately <a href="https://discordpy.readthedocs.io/en/stable/">discord.py</a> also happens to be one of the most popular
+Fortunately <a href="https://discordpy.readthedocs.io/en/stable/">Discord.py</a> also happens to be one of the most popular
 libraries for creating Discord bots. As you can see, the library is incredibly straightforward to use (the actual
 code is more robust to include retries and error handling, viewable on my <a href="https://github.com/seastco/dalle-discord-bot">GitHub</a>):</p>
 <pre tabindex="0"><code>@commands.hybrid_command(description=&#34;Generate an image.&#34;)
@@ -236,9 +236,10 @@ and then tie that information to a credits purchase. I went barebones and decide
 purchase, and then make the user responsible for redeeming that voucher by passing the ID into a Discord command.
 Admittedly not very user friendly, but remember this won&rsquo;t actually have any users.</p>
 <p><img src="images/redeem.gif" alt="Redeem"></p>
-<p>So to break this down: upon purchase, we store a row containing just the voucher ID and number of credits. Upon redemption,
-we update the row to include the user. Every time an image is created, we decrement the credits column by 1. All of this
-logic is part of a separate <em>voucher-service</em> container running as a Flask application on the same EC2 instance as the bot.</p>
+<p>So to break this down: upon purchase, we store a row containing the voucher ID and number of credits. Upon redemption,
+we update the row to include the user ID found in the command context. Every time an image is created, we decrement the
+credits column by 1. All of this logic is part of a separate <em>voucher-service</em> container running as a Flask application
+on the same EC2 instance as the bot.</p>
 <h2 id="sqlite">SQLite</h2>
 <p>Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. With an EBS
 volume, we can terminate our container and EC2 instance without blowing away our database. Now I didn&rsquo;t do extensive

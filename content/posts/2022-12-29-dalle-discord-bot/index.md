@@ -21,7 +21,7 @@ DALL-E generated image.
 
 ## Discord.py
 It's been a minute since I've done anything in Python (3.11 is already a thing?!), so I decided to roll with that. 
-Fortunately [discord.py](https://discordpy.readthedocs.io/en/stable/) also happens to be one of the most popular 
+Fortunately [Discord.py](https://discordpy.readthedocs.io/en/stable/) also happens to be one of the most popular 
 libraries for creating Discord bots. As you can see, the library is incredibly straightforward to use (the actual 
 code is more robust to include retries and error handling, viewable on my [GitHub](https://github.com/seastco/dalle-discord-bot)):
 
@@ -68,9 +68,10 @@ Admittedly not very user friendly, but remember this won't actually have any use
 
 ![Redeem](images/redeem.gif)
 
-So to break this down: upon purchase, we store a row containing just the voucher ID and number of credits. Upon redemption, 
-we update the row to include the user. Every time an image is created, we decrement the credits column by 1. All of this 
-logic is part of a separate *voucher-service* container running as a Flask application on the same EC2 instance as the bot. 
+So to break this down: upon purchase, we store a row containing the voucher ID and number of credits. Upon redemption, 
+we update the row to include the user ID found in the command context. Every time an image is created, we decrement the 
+credits column by 1. All of this logic is part of a separate *voucher-service* container running as a Flask application 
+on the same EC2 instance as the bot. 
 
 ## SQLite
 Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. With an EBS 
