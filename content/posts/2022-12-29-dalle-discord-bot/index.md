@@ -56,13 +56,13 @@ And the final product...
 ## Voucher Service
 I started thinking, why not release this to the public? Well, for starters, generating a DALL-E image costs 2 cents a 
 pop, and I'm not fronting that cost. I'd have to implement some kind of pay-for-use system. Accepting money for a side 
-project, even if it's to break even, is generally prohibited at the company I work for. I think.
+project, even if it's to break even, is generally prohibited at the company I work for.
 
-...I built it anyway. I just won't release it to the public until I have a concrete answer. 
+...I built it anyway. It just won't be available to the public.
 
 Having purchaseable credits is the simplest approach, i.e. 1 credit == 1 image. The next thing is tying that purchase 
 back to a particular Discord user. The best way do this is to have some kind of OAuth login to request client information, 
-and then tie that information with a credit purchase. I went barebones and decided to generate a voucher ID for every 
+and then tie that information to a credits purchase. I went barebones and decided to generate a voucher ID for every 
 purchase, and then make the user responsible for redeeming that voucher by passing the ID into a Discord command. 
 Admittedly not very user friendly, but remember this won't actually have any users.
 
@@ -70,7 +70,7 @@ Admittedly not very user friendly, but remember this won't actually have any use
 
 So to break this down: upon purchase, we store a row containing just the voucher ID and number of credits. Upon redemption, 
 we update the row to include the user. Every time an image is created, we decrement the credits column by 1. All of this 
-logic is part of a separate *voucher-service* running as a Flask application on the same EC2 instance as the bot. 
+logic is part of a separate *voucher-service* container running as a Flask application on the same EC2 instance as the bot. 
 
 ## SQLite
 Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. Now I didn't do 
