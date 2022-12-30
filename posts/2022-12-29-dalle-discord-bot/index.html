@@ -28,13 +28,13 @@ resources, port mappings, network links, etc. An instance of a task definition i
 simulatenously on EC2 instances. If one of our tasks fails or stops, the service scheduler launches another task to
 replace it. In this case, a single task replica is fine.</p><p><img src=images/service_configuration.png alt="Service Configuration"></p><p>And the final product&mldr;</p><p><img src=images/generate.gif alt=Generate></p><h2 id=voucher-service>Voucher Service</h2><p>I started thinking, why not release this to the public? Well, for starters, generating a DALL-E image costs 2 cents a
 pop, and I&rsquo;m not fronting that cost. I&rsquo;d have to implement some kind of pay-for-use system. Accepting money for a side
-project, even if it&rsquo;s to break even, is generally prohibited at the company I work for. I think.</p><p>&mldr;I built it anyway. I just won&rsquo;t release it to the public until I have a concrete answer.</p><p>Having purchaseable credits is the simplest approach, i.e. 1 credit == 1 image. The next thing is tying that purchase
+project, even if it&rsquo;s to break even, is generally prohibited at the company I work for.</p><p>&mldr;I built it anyway. It just won&rsquo;t be available to the public.</p><p>Having purchaseable credits is the simplest approach, i.e. 1 credit == 1 image. The next thing is tying that purchase
 back to a particular Discord user. The best way do this is to have some kind of OAuth login to request client information,
-and then tie that information with a credit purchase. I went barebones and decided to generate a voucher ID for every
+and then tie that information to a credits purchase. I went barebones and decided to generate a voucher ID for every
 purchase, and then make the user responsible for redeeming that voucher by passing the ID into a Discord command.
 Admittedly not very user friendly, but remember this won&rsquo;t actually have any users.</p><p><img src=images/redeem.gif alt=Redeem></p><p>So to break this down: upon purchase, we store a row containing just the voucher ID and number of credits. Upon redemption,
 we update the row to include the user. Every time an image is created, we decrement the credits column by 1. All of this
-logic is part of a separate <em>voucher-service</em> running as a Flask application on the same EC2 instance as the bot.</p><h2 id=sqlite>SQLite</h2><p>Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. Now I didn&rsquo;t do
+logic is part of a separate <em>voucher-service</em> container running as a Flask application on the same EC2 instance as the bot.</p><h2 id=sqlite>SQLite</h2><p>Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. Now I didn&rsquo;t do
 extensive research, so I have no clue how this would handle decrementing hundreds or thousands of credits per second.
 Probably woudn&rsquo;t be my first choice for production. I initially wanted to go with an AWS-managed database like RDS, but it
 was too pricey for the scope of this project.</p><h2 id=fin>Fin</h2><p>And that&rsquo;s that! This started off as a simple Python script running on my machine, and turned into me dabbling with ECS,
