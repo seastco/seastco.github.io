@@ -38,13 +38,13 @@ async def generate(self, context: commands.Context, prompt: str):
 ## AWS Elastic Container Service (ECS)
 For hosting, I went with something I hadn't used before: AWS Elastic Container Service (ECS). Over-engineered for what 
 will ultimately be a Python script, but I did it for the sake of learning. With ECS, we define a *task definition* which 
-is basically a specification on how to run containers. In here we'll have our container name(s), image(s), CPU/memory 
+is basically a specification for how to run containers. In here we'll have our container name(s), image(s), CPU/memory 
 resources, port mappings, network links, etc. An instance of a task definition is called a *task*. 
 
 ![Task Overview](images/task_overview.png)
 
 We also need to configure something called a *service*, which runs and maintains a specified number of tasks 
-simulatenously on EC2 instances. If one of our tasks fails or stops, the service scheduler launches another task to 
+simultaneously on EC2 instances. If one of our tasks fails or stops, the service scheduler launches another task to 
 replace it. In this case, a single task replica is fine.
 
 ![Service Configuration](images/service_configuration.png)
@@ -73,10 +73,10 @@ we update the row to include the user. Every time an image is created, we decrem
 logic is part of a separate *voucher-service* container running as a Flask application on the same EC2 instance as the bot. 
 
 ## SQLite
-Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. Now I didn't do 
-extensive research, so I have no clue how this would handle decrementing hundreds or thousands of credits per second. 
-Probably woudn't be my first choice for production. I initially wanted to go with an AWS-managed database like RDS, but it 
-was too pricey for the scope of this project.
+Vouchers are stored in SQLite and the SQLite file is backed by an EBS volume attached to the EC2 instance. With an EBS 
+volume, we can terminate our container and EC2 instance without blowing away our database. Now I didn't do extensive 
+research, so I have no clue how many transactions per second this SQLite file can handle. I initially wanted to go with an 
+AWS-managed database like RDS, but it was too pricey for the scope of this project.
 
 ## Fin
 And that's that! This started off as a simple Python script running on my machine, and turned into me dabbling with ECS, 
